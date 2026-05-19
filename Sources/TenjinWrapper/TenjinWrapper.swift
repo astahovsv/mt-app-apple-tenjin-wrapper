@@ -40,7 +40,7 @@ public enum TenjinWrapper {
         andQuantity: Int,
         andUnitPrice: NSDecimalNumber,
         andTransactionId: String,
-        andReceipt: NSData
+        andReceipt: Data
     ) {
         #if canImport(TenjinSDK) && !targetEnvironment(macCatalyst)
         TenjinSDK.transaction(
