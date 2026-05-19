@@ -33,4 +33,44 @@ public enum TenjinWrapper {
         )
         #endif
     }
+
+    public static func transaction(
+        withProductName: String,
+        andCurrencyCode: String,
+        andQuantity: Int,
+        andUnitPrice: NSDecimalNumber,
+        andTransactionId: String,
+        andReceipt: NSData
+    ) {
+        #if canImport(TenjinSDK) && !targetEnvironment(macCatalyst)
+        TenjinSDK.transaction(
+            withProductName: withProductName,
+            andCurrencyCode: andCurrencyCode,
+            andQuantity: andQuantity,
+            andUnitPrice: andUnitPrice,
+            andTransactionId: andTransactionId,
+            andReceipt: andReceipt
+        )
+        #endif
+    }
+
+    public static func transaction(
+        withProductName: String,
+        andCurrencyCode: String,
+        andQuantity: Int,
+        andUnitPrice: NSDecimalNumber,
+        andTransactionId: String,
+        andBase64Receipt: String
+    ) {
+        #if canImport(TenjinSDK) && !targetEnvironment(macCatalyst)
+        TenjinSDK.transaction(
+            withProductName: withProductName,
+            andCurrencyCode: andCurrencyCode,
+            andQuantity: andQuantity,
+            andUnitPrice: andUnitPrice,
+            andTransactionId: andTransactionId,
+            andBase64Receipt: andBase64Receipt
+        )
+        #endif
+    }
 }
